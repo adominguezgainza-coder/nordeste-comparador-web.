@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nordeste Comparador - Reducimos sus facturas de electricidad, gas y telecomunicaciones hasta un 40%" />
+  <title>Nordeste Comparador — Reduzca sus facturas</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Play CDN (rápido para prototipos) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config: colores corporativos y fuentes
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ncblue: '#06b6d4',        // turquesa/azul principal
+            ncyellow: '#d4a90a',      // amarillo mostaza
+            ncorange: '#f59e0b',      // naranja secundario
+            ncdeep: '#0b2545'         // azul oscuro footer
+          },
+          fontFamily: {
+            sans: ['Roboto', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Small custom styles */
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); }
+    .card-shadow { box-shadow: 0 10px 25px rgba(2,6,23,0.08); }
+  </style>
+</head>
+<body class="antialiased text-gray-800 font-sans bg-white">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center gap-3" aria-label="Nordeste Comparador - Inicio">
+        <div class="w-10 h-10 rounded-md bg-ncblue flex items-center justify-center text-white font-bold">NC</div>
+        <div class="hidden sm:block">
+          <div class="text-sm font-semibold">Nordeste Comparador</div>
+          <div class="text-xs text-gray-500">Ahorre en energía y telecomunicaciones</div>
+        </div>
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-6" aria-label="Menú principal">
+        <a href="#inicio" class="text-sm hover:text-ncblue">Inicio</a>
+        <a href="#nosotros" class="text-sm hover:text-ncblue">Nosotros</a>
+        <a href="#servicios" class="text-sm hover:text-ncblue">Servicios</a>
+        <a href="#contacto" class="text-sm hover:text-ncblue">Contacto</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <a href="#contacto" class="hidden md:inline-block px-4 py-2 rounded-full bg-ncyellow text-ncdeep font-medium shadow hover:opacity-95" aria-label="Consulta Gratuita">Consulta Gratuita</a>
+
+        <!-- Mobile menu button -->
+        <button id="btn-mobile" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-ncblue" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100">
+    <div class="px-4 pb-4 pt-2 space-y-2">
+      <a href="#inicio" class="block px-3 py-2 rounded-md">Inicio</a>
+      <a href="#nosotros" class="block px-3 py-2 rounded-md">Nosotros</a>
+      <a href="#servicios" class="block px-3 py-2 rounded-md">Servicios</a>
+      <a href="#contacto" class="block px-3 py-2 rounded-md">Contacto</a>
+      <a href="#contacto" class="block px-3 py-2 rounded-md bg-ncyellow text-ncdeep rounded-full text-center">Consulta Gratuita</a>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- HERO -->
+  <section class="relative bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-16">
+        <div class="lg:col-span-7">
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Reduzca sus facturas <span class="text-ncblue">hasta en un 40%</span></h1>
+          <p class="mt-4 text-lg text-gray-600">En Nordeste Comparador ayudamos a empresas y particulares a identificar oportunidades reales de ahorro en electricidad, gas y telecomunicaciones mediante análisis, comparación y negociación profesional.</p>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-ncyellow text-ncdeep font-semibold shadow hover:opacity-95" aria-label="Obtener Consulta Gratuita">Obtener Consulta Gratuita</a>
+            <a href="#servicios" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-200 text-gray-700 hover:bg-gray-50">Ver Servicios</a>
+          </div>
+
+          <!-- Reason box -->
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="p-4 glass rounded-lg card-shadow" role="note" aria-label="Razón 1">
+              <div class="text-sm font-semibold">Sin ningún coste</div>
+              <div class="text-xs text-gray-500">Evaluación inicial sin compromiso</div>
+            </div>
+            <div class="p-4 glass rounded-lg card-shadow" role="note" aria-label="Razón 2">
+              <div class="text-sm font-semibold">Más de 15 años</div>
+              <div class="text-xs text-gray-500">Experiencia en el mercado español</div>
+            </div>
+            <div class="p-4 glass rounded-lg card-shadow" role="note" aria-label="Razón 3">
+              <div class="text-sm font-semibold">Soporte continuo</div>
+              <div class="text-xs text-gray-500">Acompañamiento durante todo el proceso</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f6b9e9e8f0c6b2cd1a1d45f7b3f1a9d" alt="Ilustración ahorro energético" class="w-full rounded-xl object-cover h-72 sm:h-96 shadow-lg">
+
+            <div class="absolute -bottom-6 right-4 w-64 bg-white rounded-xl p-4 card-shadow border">
+              <div class="text-sm font-semibold text-gray-800">¿Por qué elegirnos?</div>
+              <ul class="mt-2 text-xs text-gray-600 space-y-1">
+                <li>Sin ningún coste</li>
+                <li>Más de 15 años de experiencia</li>
+                <li>Soporte continuo y gestión completa</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RAZONES DESTACADO -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h3 class="text-xl font-semibold">Experiencia comprobada</h3>
+          <p class="mt-2 text-gray-600">Llevamos más de 15 años ayudando a clientes a optimizar costes y mejorar sus contratos con resultados medibles.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h3 class="text-xl font-semibold">Procesos transparentes</h3>
+          <p class="mt-2 text-gray-600">Informes claros, sin costes ocultos y con opciones comparadas para que el cliente decida.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h3 class="text-xl font-semibold">Soporte completo</h3>
+          <p class="mt-2 text-gray-600">Negociamos, gestionamos el cambio y monitorizamos resultados para garantizar el ahorro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS / BENEFICIOS -->
+  <section id="servicios" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold">Nuestras áreas de experiencia</h2>
+        <p class="text-gray-600">Soluciones para empresas y particulares.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Electricidad -->
+        <article class="rounded-lg p-6 card-shadow bg-yellow-50" role="article" aria-labelledby="serv1">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-md bg-ncyellow flex items-center justify-center text-white font-bold">⚡</div>
+            <div>
+              <h3 id="serv1" class="text-lg font-semibold">Optimización de Planes de Electricidad</h3>
+              <div class="text-3xl font-extrabold mt-2">20–35% <span class="text-sm font-medium">Ahorro</span></div>
+              <p class="mt-2 text-gray-700">Navegue por el complejo mercado eléctrico con nuestro análisis experto y obtenga la tarifa adecuada.</p>
+              <ul class="mt-3 list-disc ml-5 text-gray-700 text-sm space-y-1">
+                <li>Análisis de consumo</li>
+                <li>Comparación de proveedores</li>
+                <li>Negociación y gestión del cambio</li>
+                <li>Monitoreo continuo</li>
+              </ul>
+              <div class="mt-4">
+                <a href="#contacto" class="inline-block px-4 py-2 rounded-full bg-ncyellow text-ncdeep font-semibold">Empezar</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Gas -->
+        <article class="rounded-lg p-6 card-shadow bg-orange-50" role="article" aria-labelledby="serv2">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-md bg-ncorange flex items-center justify-center text-white font-bold">🔥</div>
+            <div>
+              <h3 id="serv2" class="text-lg font-semibold">Consultoría de Planes de Gas</h3>
+              <div class="text-3xl font-extrabold mt-2">15–25% <span class="text-sm font-medium">Ahorro</span></div>
+              <p class="mt-2 text-gray-700">Optimice sus costos de gas natural con recomendaciones técnicas y comerciales.</p>
+              <ul class="mt-3 list-disc ml-5 text-gray-700 text-sm space-y-1">
+                <li>Comparación de proveedores</li>
+                <li>Revisión de contratos</li>
+                <li>Recomendaciones de eficiencia</li>
+                <li>Planificación a largo plazo</li>
+              </ul>
+              <div class="mt-4">
+                <a href="#contacto" class="inline-block px-4 py-2 rounded-full bg-ncyellow text-ncdeep font-semibold">Empezar</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Telecomunicaciones -->
+        <article class="rounded-lg p-6 card-shadow bg-blue-50" role="article" aria-labelledby="serv3">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-md bg-ncblue flex items-center justify-center text-white font-bold">📶</div>
+            <div>
+              <h3 id="serv3" class="text-lg font-semibold">Optimización de Telecomunicaciones</h3>
+              <div class="text-3xl font-extrabold mt-2">25–40% <span class="text-sm font-medium">Ahorro</span></div>
+              <p class="mt-2 text-gray-700">Encuentre la combinación óptima de telefonía e internet para su organización.</p>
+              <ul class="mt-3 list-disc ml-5 text-gray-700 text-sm space-y-1">
+                <li>Comparación de planes</li>
+                <li>Optimización de paquetes</li>
+                <li>Análisis calidad/costo</li>
+                <li>Negociación y gestión</li>
+              </ul>
+              <div class="mt-4">
+                <a href="#contacto" class="inline-block px-4 py-2 rounded-full bg-ncyellow text-ncdeep font-semibold">Empezar</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="py-12 bg-ncblue text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold">¿Por Qué Elegirnos?</h2>
+          <p class="text-gray-100">Soluciones prácticas y resultados medibles. Transparencia y acompañamiento en todo momento.</p>
+
+          <ul class="mt-4 space-y-2 text-sm">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Sin costes ocultos</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path></svg> Más de 15 años de experiencia</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 10h4l3-10h4"></path></svg> Soporte continuo</li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-2 grid grid-cols-3 gap-4">
+          <div class="bg-white bg-opacity-10 rounded-lg p-6 text-center">
+            <div class="text-3xl font-extrabold">40%+</div>
+            <div class="text-sm">Ahorro promedio</div>
+          </div>
+          <div class="bg-white bg-opacity-10 rounded-lg p-6 text-center">
+            <div class="text-3xl font-extrabold">900+</div>
+            <div class="text-sm">Clientes satisfechos</div>
+          </div>
+          <div class="bg-white bg-opacity-10 rounded-lg p-6 text-center">
+            <div class="text-3xl font-extrabold">24h</div>
+            <div class="text-sm">Tiempo de respuesta</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-6">Testimonios</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <blockquote class="bg-white p-6 rounded-lg card-shadow">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center">👩</div>
+            <div>
+              <div class="font-semibold">María L. — Restaurante</div>
+              <div class="text-sm text-yellow-500">★★★★★</div>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-700">"Nordeste Comparador nos ayudó a reducir las facturas y gestionar el cambio de proveedor sin interrupciones. Profesionalidad y resultados reales."</p>
+        </blockquote>
+
+        <!-- Testimonial 2 -->
+        <blockquote class="bg-white p-6 rounded-lg card-shadow">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center">🏢</div>
+            <div>
+              <div class="font-semibold">Carlos M. — Pyme</div>
+              <div class="text-sm text-yellow-500">★★★★★</div>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-700">"Excelente análisis y negociación. Ahorramos considerablemente en telecomunicaciones y la atención es rápida."</p>
+        </blockquote>
+
+        <!-- Testimonial 3 -->
+        <blockquote class="bg-white p-6 rounded-lg card-shadow">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center">🏠</div>
+            <div>
+              <div class="font-semibold">Ana R. — Vivienda</div>
+              <div class="text-sm text-yellow-500">★★★★★</div>
+            </div>
+          </div>
+          <p class="mt-4 text-gray-700">"Muy profesionales, recomendaría su servicio a cualquiera que quiera reducir costes sin complicaciones."</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE DE CONVERSIÓN -->
+  <section class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-bold">¿Listo para Empezar a Ahorrar?</h2>
+        <p class="mt-2 text-gray-600">Consulta gratuita, sin tarifas ocultas y seguimiento continuo de sus resultados.</p>
+
+        <ul class="mt-4 list-disc ml-5 text-gray-700">
+          <li>Consulta gratuita y sin compromiso</li>
+          <li>Sin tarifas ocultas</li>
+          <li>Ahorro promedio 30–40%</li>
+          <li>Monitoreo continuo</li>
+        </ul>
+
+        <div class="mt-6 grid grid-cols-3 gap-3">
+          <div class="p-4 bg-white rounded-lg card-shadow text-center">
+            <div class="font-bold text-xl">1</div>
+            <div class="text-sm mt-1">Contáctenos</div>
+          </div>
+          <div class="p-4 bg-white rounded-lg card-shadow text-center">
+            <div class="font-bold text-xl">2</div>
+            <div class="text-sm mt-1">Análisis de facturas</div>
+          </div>
+          <div class="p-4 bg-white rounded-lg card-shadow text-center">
+            <div class="font-bold text-xl">3</div>
+            <div class="text-sm mt-1">Empiece a ahorrar</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini-form rápido -->
+      <aside class="p-6 bg-white rounded-lg card-shadow">
+        <form id="mini-form" aria-label="Formulario rápido de consulta">
+          <label class="block text-sm font-medium">Nombre</label>
+          <input type="text" name="nombre" required class="w-full mt-2 p-2 border rounded-md" placeholder="Nombre completo" />
+
+          <label class="block text-sm font-medium mt-3">Teléfono / WhatsApp</label>
+          <input type="tel" name="telefono" required class="w-full mt-2 p-2 border rounded-md" placeholder="+34 6xx xxx xxx" />
+
+          <label class="block text-sm font-medium mt-3">Servicio de interés</label>
+          <select name="servicio" class="w-full mt-2 p-2 border rounded-md">
+            <option>Electricidad</option>
+            <option>Gas</option>
+            <option>Telecomunicaciones</option>
+          </select>
+
+          <button type="submit" class="mt-4 w-full inline-flex items-center justify-center px-4 py-2 rounded-full bg-ncyellow text-ncdeep font-semibold">Solicitar</button>
+          <div id="mini-msg" role="status" class="sr-only">Formulario enviado</div>
+        </form>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-2xl font-bold">Sobre Nosotros</h2>
+        <p class="mt-3 text-gray-700">Nuestra misión es democratizar el acceso a mejores tarifas en España mediante procesos claros, tecnología y negociación directa con proveedores.</p>
+
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <div class="text-xl font-extrabold">900+</div>
+            <div class="text-sm text-gray-600">Clientes</div>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <div class="text-xl font-extrabold">1M€</div>
+            <div class="text-sm text-gray-600">Ahorros gestionados</div>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <div class="text-xl font-extrabold">35%</div>
+            <div class="text-sm text-gray-600">Reducción promedio</div>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <div class="text-xl font-extrabold">24h</div>
+            <div class="text-sm text-gray-600">Respuesta</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold">Nuestros Valores</h3>
+        <ul class="mt-3 space-y-3 text-gray-700">
+          <li><strong>Transparencia:</strong> Informes claros y decisiones compartidas.</li>
+          <li><strong>El Cliente Primero:</strong> Propuestas personalizadas y soporte dedicado.</li>
+          <li><strong>Experiencia:</strong> Más de 15 años en el sector energético y telecom.</li>
+        </ul>
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 bg-white rounded-lg card-shadow">
+            <h4 class="font-semibold">Equipo Experto</h4>
+            <p class="text-sm text-gray-600 mt-2">Analistas, negociadores y gestores con experiencia técnica y comercial.</p>
+            <ul class="mt-3 text-sm text-gray-600 list-disc ml-5">
+              <li>Análisis y monitoreo</li>
+              <li>Gerentes dedicados</li>
+              <li>Estrategias a medida</li>
+            </ul>
+          </div>
+
+          <div class="p-4 bg-white rounded-lg card-shadow">
+            <h4 class="font-semibold">Resultados comprobados</h4>
+            <p class="text-sm text-gray-600 mt-2">Casos reales con reducción sostenida de costes y clientes satisfechos.</p>
+            <ul class="mt-3 text-sm text-gray-600 list-disc ml-5">
+              <li>15+ años de experiencia</li>
+              <li>Soporte continuo</li>
+              <li>Reportes periódicos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS DETALLADOS -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold">Servicios detallados</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- tarjeta ampliada Electricidad -->
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h3 class="font-semibold">Optimización de Planes de Electricidad</h3>
+          <p class="mt-2 text-gray-700">Analizamos su consumo, identificamos patrones y negociamos las mejores tarifas en su nombre. Implementamos medidas y monitorizamos resultados.</p>
+          <ul class="mt-3 list-disc ml-5 text-gray-700">
+            <li>Auditoría de consumo</li>
+            <li>Comparativa tarifaria</li>
+            <li>Negociación con proveedores</li>
+            <li>Implementación y seguimiento</li>
+          </ul>
+          <div class="mt-4"><a href="#contacto" class="inline-block px-4 py-2 rounded-full bg-ncyellow text-ncdeep">Empezar</a></div>
+        </div>
+
+        <!-- tarjeta ampliada Gas -->
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h3 class="font-semibold">Consultoría de Planes de Gas</h3>
+          <p class="mt-2 text-gray-700">Revisamos contratos y proponemos ajustes comerciales y operativos para reducir su coste de suministro de gas.</p>
+          <ul class="mt-3 list-disc ml-5 text-gray-700">
+            <li>Revisión contractual</li>
+            <li>Comparativa de ofertas</li>
+            <li>Recomendaciones de eficiencia</li>
+            <li>Planificación energética</li>
+          </ul>
+          <div class="mt-4"><a href="#contacto" class="inline-block px-4 py-2 rounded-full bg-ncyellow text-ncdeep">Empezar</a></div>
+        </div>
+
+        <!-- tarjeta ampliada Telecom -->
+        <div class="bg-white p-6 rounded-lg card-shadow">
+          <h3 class="font-semibold">Optimización de Telecomunicaciones</h3>
+          <p class="mt-2 text-gray-700">Combinamos evaluación técnica y negociación comercial para conseguir servicios de conectividad eficientes y económicos.</p>
+          <ul class="mt-3 list-disc ml-5 text-gray-700">
+            <li>Análisis calidad/precio</li>
+            <li>Optimización de paquetes</li>
+            <li>Negociación y migración</li>
+            <li>Soporte y SLAs</li>
+          </ul>
+          <div class="mt-4"><a href="#contacto" class="inline-block px-4 py-2 rounded-full bg-ncyellow text-ncdeep">Empezar</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRO PROCESO -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-6">Nuestro Proceso</h2>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex-1">
+          <ol class="flex flex-col md:flex-row items-stretch gap-4">
+            <li class="bg-white p-4 rounded-lg shadow text-center flex-1">
+              <div class="font-bold">1</div>
+              <div class="text-sm mt-1">Consulta inicial</div>
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow text-center flex-1">
+              <div class="font-bold">2</div>
+              <div class="text-sm mt-1">Investigación</div>
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow text-center flex-1">
+              <div class="font-bold">3</div>
+              <div class="text-sm mt-1">Recomendación</div>
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow text-center flex-1">
+              <div class="font-bold">4</div>
+              <div class="text-sm mt-1">Implementación</div>
+            </li>
+            <li class="bg-white p-4 rounded-lg shadow text-center flex-1">
+              <div class="font-bold">5</div>
+              <div class="text-sm mt-1">Soporte continuo</div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-12 bg-ncdeep text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <h2 class="text-2xl font-bold">¿Listo para Optimizar Sus Costos?</h2>
+        <p class="mt-2 text-gray-200">Inicie una consulta gratuita y empiece a reducir sus facturas hoy mismo.</p>
+      </div>
+      <div>
+        <a href="#contacto" class="inline-block px-6 py-3 rounded-full bg-ncyellow text-ncdeep font-semibold">Inicie Su Consulta Gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO AVANZADO -->
+  <section id="contacto" class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold">Contacto</h2>
+      <p class="mt-2 text-gray-600">Rellene el formulario o utilice los datos directos de contacto.</p>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Formulario -->
+        <form id="contact-form" class="bg-white p-6 rounded-lg card-shadow" enctype="multipart/form-data" aria-label="Formulario de contacto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="nombre" class="block text-sm font-medium">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" required class="mt-2 p-2 border rounded-md w-full" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium">Correo electrónico</label>
+              <input id="email" name="email" type="email" required class="mt-2 p-2 border rounded-md w-full" />
+            </div>
+            <div>
+              <label for="telefono" class="block text-sm font-medium">Teléfono / WhatsApp</label>
+              <input id="telefono" name="telefono" type="tel" required class="mt-2 p-2 border rounded-md w-full" />
+            </div>
+            <div>
+              <label for="servicioInteres" class="block text-sm font-medium">Servicio de interés</label>
+              <select id="servicioInteres" name="servicioInteres" class="mt-2 p-2 border rounded-md w-full">
+                <option>Electricidad</option>
+                <option>Gas</option>
+                <option>Telecomunicaciones</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <label for="tipoPropiedad" class="block text-sm font-medium">Tipo de propiedad</label>
+            <select id="tipoPropiedad" name="tipoPropiedad" class="mt-2 p-2 border rounded-md w-full">
+              <option>Vivienda</option>
+              <option>Pyme</option>
+              <option>Industria</option>
+              <option>Hostelería</option>
+            </select>
+          </div>
+
+          <div class="mt-4">
+            <label for="factura" class="block text-sm font-medium">Factura mensual aproximada (€)</label>
+            <input id="factura" name="factura" type="number" min="0" required class="mt-2 p-2 border rounded-md w-full" />
+          </div>
+
+          <div class="mt-4">
+            <label for="comentarios" class="block text-sm font-medium">Comentarios adicionales</label>
+            <textarea id="comentarios" name="comentarios" rows="4" class="mt-2 p-2 border rounded-md w-full" placeholder="Indique detalles que considere relevantes"></textarea>
+          </div>
+
+          <div class="mt-4">
+            <label for="file" class="block text-sm font-medium">Cargar factura (PDF/JPG/PNG, max 10 MB)</label>
+            <input id="file" name="file" type="file" accept="application/pdf,image/png,image/jpeg" class="mt-2" />
+            <p class="text-xs text-gray-500 mt-1">Puede subir una factura para que nuestro equipo realice un análisis inicial.</p>
+          </div>
+
+          <div class="mt-4 flex items-center gap-2">
+            <input id="gdpr" name="gdpr" type="checkbox" required />
+            <label for="gdpr" class="text-sm">Acepto el tratamiento de datos conforme a la <a href="#" class="text-ncblue underline">política de privacidad</a>.</label>
+          </div>
+
+          <div class="mt-4 flex items-center gap-3">
+            <button id="sendBtn" type="submit" class="inline-flex items-center px-4 py-2 rounded-full bg-ncyellow text-ncdeep font-semibold">Enviar facturas</button>
+            <a href="tel:+34667274075" class="inline-flex items-center px-4 py-2 rounded-full border border-gray-200">Llámenos</a>
+            <a href="https://wa.me/34667274075" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 rounded-full border border-gray-200">Contactar por WhatsApp</a>
+          </div>
+
+          <div id="form-msg" class="mt-4 hidden" role="status"></div>
+        </form>
+
+        <!-- Datos de contacto visibles -->
+        <aside class="bg-white p-6 rounded-lg card-shadow">
+          <h3 class="font-semibold">Datos de contacto</h3>
+          <p class="mt-2 text-sm text-gray-700">Teléfonos: <a href="tel:+34667274075" class="text-ncblue">667 274 075</a> / <a href="tel:+34981029315" class="text-ncblue">981 029 315</a></p>
+          <p class="mt-1 text-sm">Email: <a href="mailto:nordestecomparativas@gmail.com" class="text-ncblue">nordestecomparativas@gmail.com</a></p>
+          <p class="mt-1 text-sm">Web: <a href="https://www.nordestecomparador.info" class="text-ncblue">www.nordestecomparador.info</a></p>
+          <p class="mt-1 text-sm">Ubicación: Galicia, España</p>
+          <p class="mt-1 text-sm">Horario: L-V 09:00–18:00</p>
+
+          <div class="mt-4">
+            <!-- Opcional: iframe de Google Maps (descomentarlo si desea mostrar) -->
+            <!-- <iframe src="..." class="w-full h-40 rounded" loading="lazy"></iframe> -->
+            <p class="text-xs text-gray-500">También disponible: chat en línea (simulado)</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CHAT FLOTANTE SIMULADO -->
+<button id="chat-btn" aria-label="Abrir chat" class="fixed bottom-6 right-6 bg-ncyellow text-ncdeep rounded-full w-14 h-14 flex items-center justify-center shadow-lg">💬</button>
+<div id="chat-box" class="hidden fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-lg overflow-hidden" role="dialog" aria-label="Chat de soporte">
+  <div class="p-4 border-b">Soporte Nordeste Comparador <span class="text-xs text-gray-500 ml-2">(simulado)</span></div>
+  <div class="p-4" id="chat-content">
+    <p class="text-sm text-gray-600">Hola 👋 ¿En qué podemos ayudarle? Puede solicitar una consulta gratuita desde el formulario.</p>
+  </div>
+  <div class="p-3 border-t flex gap-2">
+    <input id="chat-input" class="flex-1 p-2 border rounded" placeholder="Escribir mensaje..." />
+    <button id="chat-send" class="px-3 py-2 rounded bg-ncblue text-white">Enviar</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-ncdeep text-white mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div>
+      <div class="font-bold">Nordeste Comparador</div>
+      <div class="text-sm text-gray-200 mt-2">Reduciendo costes en electricidad, gas y telecomunicaciones.</div>
+    </div>
+    <div>
+      <div class="font-semibold">Enlaces rápidos</div>
+      <ul class="mt-2 text-sm text-gray-200 space-y-1">
+        <li><a href="#servicios" class="hover:underline">Servicios</a></li>
+        <li><a href="#nosotros" class="hover:underline">Nosotros</a></li>
+        <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-semibold">Contacto</div>
+      <div class="text-sm mt-2">Tel: 667 274 075 / 981 029 315</div>
+      <div class="text-sm">Email: nordestecomparativas@gmail.com</div>
+    </div>
+  </div>
+  <div class="border-t border-ncblue/30 text-center text-xs text-gray-200 py-4">© Nordeste Comparador — Política de privacidad | Aviso legal</div>
+</footer>
+
+<!-- SCRIPTS: comportamiento simple y validaciones -->
+<script>
+  // Mobile menu toggle
+  const btnMobile = document.getElementById('btn-mobile');
+  const mobileMenu = document.getElementById('mobile-menu');
+  btnMobile.addEventListener('click', () => {
+    const expanded = btnMobile.getAttribute('aria-expanded') === 'true';
+    btnMobile.setAttribute('aria-expanded', String(!expanded));
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Mini form simulation
+  document.getElementById('mini-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const msg = document.getElementById('mini-msg');
+    msg.classList.remove('sr-only');
+    msg.textContent = 'Gracias — le contactaremos en breve.';
+    setTimeout(()=>{ msg.classList.add('sr-only'); }, 4000);
+  });
+
+  // Contact form: validate file size and simulate send
+  const contactForm = document.getElementById('contact-form');
+  const fileInput = document.getElementById('file');
+  const formMsg = document.getElementById('form-msg');
+
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // File validation
+    const file = fileInput.files[0];
+    if(file) {
+      const maxBytes = 10 * 1024 * 1024; // 10 MB
+      if(file.size > maxBytes){
+        showFormMessage('El archivo supera 10 MB. Por favor seleccione otro archivo.', 'error');
+        return;
+      }
+      const allowed = ['application/pdf','image/png','image/jpeg'];
+      if(!allowed.includes(file.type)){
+        showFormMessage('Formato no permitido. Solo PDF, JPG o PNG.', 'error');
+        return;
+      }
+    }
+
+    // Simulación de envío (aquí integrar backend real)
+    showFormMessage('Enviando...');
+
+    setTimeout(()=>{
+      showFormMessage('¡Gracias! Hemos recibido su solicitud. Le contactaremos en menos de 24h.', 'success');
+      contactForm.reset();
+    }, 1200);
+  });
+
+  function showFormMessage(text, type){
+    formMsg.classList.remove('hidden');
+    formMsg.textContent = text;
+    formMsg.classList.remove('text-green-600','text-red-600');
+    if(type === 'success') { formMsg.classList.add('text-green-600'); }
+    if(type === 'error') { formMsg.classList.add('text-red-600'); }
+  }
+
+  // Chat simulated
+  const chatBtn = document.getElementById('chat-btn');
+  const chatBox = document.getElementById('chat-box');
+  const chatSend = document.getElementById('chat-send');
+  const chatInput = document.getElementById('chat-input');
+  const chatContent = document.getElementById('chat-content');
+
+  chatBtn.addEventListener('click', ()=> chatBox.classList.toggle('hidden'));
+  chatSend.addEventListener('click', ()=> sendChat());
+  chatInput.addEventListener('keydown', (e)=> { if(e.key === 'Enter') sendChat(); });
+
+  function sendChat(){
+    const text = chatInput.value.trim();
+    if(!text) return;
+    const p = document.createElement('p'); p.className='text-sm text-gray-700'; p.textContent = 'Usted: ' + text;
+    chatContent.appendChild(p);
+    chatInput.value = '';
+    setTimeout(()=>{
+      const r = document.createElement('p'); r.className='text-sm text-gray-600'; r.textContent = 'Soporte: Gracias por su mensaje. Le responderemos por email o teléfono.';
+      chatContent.appendChild(r);
+      chatContent.scrollTop = chatContent.scrollHeight;
+    }, 800);
+  }
+
+  // Accessibility: focus outlines for keyboard users
+  document.body.addEventListener('keydown', function(e){ if(e.key === 'Tab') document.documentElement.classList.add('user-is-tabbing'); });
+</script>
+
+<!-- CONTENIDOS TEXTUALES ADICIONALES (3 mensajes ~800 caracteres cada uno) -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="text-xl font-bold">Presentación de Servicios</h2>
+
+  <article class="mt-6 bg-white p-6 rounded-lg card-shadow">
+    <h3 class="font-semibold">Electricidad</h3>
+    <p class="mt-2 text-gray-700">En Nordeste Comparador ofrecemos un servicio integral de optimización de contratos eléctricos orientado a conseguir ahorros sostenibles para empresas y particulares. Nuestra metodología combina el análisis detallado de consumos reales, la segmentación por tarifas y la identificación de alternativas ventajosas en el mercado regulado y en mercado libre. Tras realizar una auditoría energética, comparamos ofertas de múltiples comercializadoras, negociamos condiciones en nombre del cliente y gestionamos el cambio de suministro, asegurando continuidad y transparencia. Con más de 15 años de experiencia, aplicamos criterios técnicos y económicos para priorizar medidas con retorno rápido y bajo riesgo, además de ofrecer monitorización continua para validar el ahorro obtenido y proponer ajustes periódicos.</p>
+  </article>
+
+  <article class="mt-6 bg-white p-6 rounded-lg card-shadow">
+    <h3 class="font-semibold">Gas</h3>
+    <p class="mt-2 text-gray-700">Nuestra consultoría de planes de gas se centra en optimizar los costes asociados al suministro y en adaptar las condiciones contractuales a las necesidades reales del cliente. A partir de un análisis de consumo histórico y previsiones de demanda, identificamos proveedores y tarifas competitivas, revisamos cláusulas contractuales y proponemos recomendaciones operativas que reduzcan el gasto energético. También asesoramos en medidas de eficiencia y planeamiento a medio y largo plazo que permiten mitigar la volatilidad de precios. Nuestra experiencia en el mercado español nos permite negociar condiciones favorables y acompañar al cliente en la implementación técnica y administrativa de los cambios necesarios para garantizar la ejecución sin incidencias.</p>
+  </article>
+
+  <article class="mt-6 bg-white p-6 rounded-lg card-shadow">
+    <h3 class="font-semibold">Telecomunicaciones</h3>
+    <p class="mt-2 text-gray-700">En el área de telecomunicaciones combinamos criterios técnicos y comerciales para encontrar la combinación óptima de telefonía e internet, ajustada al uso real y a las expectativas de servicio de cada cliente. Realizamos auditorías de líneas y consumos, medimos calidad de conexión y latencia cuando es necesario, y comparamos ofertas de operadores para optimizar precios y prestaciones. Negociamos paquetes y acuerdos, gestionamos migraciones y establecemos acuerdos de nivel de servicio (SLA) cuando procede. Nuestro objetivo es reducir costes sin sacrificar calidad, y ofrecer un seguimiento continuo que permita adaptar la solución a la evolución de la actividad del cliente.</p>
+  </article>
+</section>
+
+<!-- FIN -->
+</body>
+</html>
